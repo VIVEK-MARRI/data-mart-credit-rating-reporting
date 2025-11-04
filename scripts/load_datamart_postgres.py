@@ -401,7 +401,10 @@ def main():
     if 'country' in tx.columns:
         sec_df['country'] = tx.groupby('security_id')['country'].first().reindex(sec_df['security_id']).values
     else:
-        sec_df['country'] = None
+    # Assign realistic countries randomly for demo visualization
+        country_list = ['USA', 'India', 'UK', 'Germany', 'Canada', 'Japan', 'France', 'Australia']
+        sec_df['country'] = np.random.choice(country_list, size=len(sec_df))
+
 
     # Vendor df
     vend_df = tx[['vendor','vendor_code','vendor_id']].drop_duplicates().rename(columns={'vendor':'vendor_name'})
