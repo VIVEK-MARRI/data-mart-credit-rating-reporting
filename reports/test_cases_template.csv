@@ -1,0 +1,3 @@
+Test Case #,Step #,Application/Screen,Test Case Description,Pre-Requisites,Input Data,Iteration #,Cross Validation,Expected Result,Defect(Y/N)
+TC01,1,Power BI Report,Verify rating trends line chart,Data loaded and cleaned,transactions_cleaned.csv,1,Validate rating codes vs mapping,Line chart plotted,N
+TC02,1,ETL Script,Verify SCD type2 population,transactions_cleaned.csv,ratings_type2_sample.csv,1,Check active flags and dates,N,

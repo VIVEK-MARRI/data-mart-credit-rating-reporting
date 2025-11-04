@@ -1,0 +1,14 @@
+{
+  "processed_files": [
+    "data\\processed\\transactions_cleaned.csv",
+    "data\\processed\\ratings_type2_sample.csv",
+    "data\\processed\\rating_frequency_per_vendor_year.csv",
+    "data\\processed\\outlier_precision_by_security_date.csv"
+  ],
+  "test_templates": [
+    "reports\\test_cases_template.csv",
+    "reports\\test_scenarios_template.csv"
+  ],
+  "notebook": "notebooks\\project_full_pipeline.ipynb",
+  "readme": "README_project.md"
+}

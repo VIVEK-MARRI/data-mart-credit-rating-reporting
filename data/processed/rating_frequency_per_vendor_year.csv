@@ -1,0 +1,13 @@
+vendor,year,rating_change_count,rating_upgrades,rating_downgrades,net_change
+CARE,2024,76,40,36,4
+CARE,2025,43,20,23,-3
+DBRS,2024,116,65,51,14
+Fitch,2024,133,70,63,7
+ICRA,2024,75,41,34,7
+ICRA,2025,50,28,22,6
+Kroll,2024,78,39,39,0
+Kroll,2025,42,20,22,-2
+Moody's,2024,119,60,59,1
+Morningstar,2024,79,38,41,-3
+Morningstar,2025,45,21,24,-3
+S&P,2024,110,56,54,2
