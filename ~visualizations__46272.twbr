@@ -1,0 +1,2789 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20252.25.1003.1601                               -->
+<workbook original-version='18.1' source-build='2025.2.4 (20252.25.1003.1601)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AccessibleZoneTabOrder />
+    <AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <MapboxVectorStylesAndLayers />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelRelationshipPerfOptions />
+    <_.fcp.ObjectModelSharedDimensions.true...ObjectModelSharedDimensions />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <WindowsPersistSimpleIdentifiers />
+    <WorksheetBackgroundTransparency />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='fact_outlier_metrics (credit_dm.fact_outlier_metrics)+ (credit_rating_dm)' inline='true' name='federated.0qilped01smibi102kb790w4gcys' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='localhost' name='postgres.0fpp8b706t4gnd10dmf49110evbn'>
+            <connection authentication='username-password' class='postgres' dbname='credit_rating_dm' one-time-sql='' port='5432' server='localhost' username='postgres' />
+          </named-connection>
+        </named-connections>
+        <relation type='collection'>
+          <_.fcp.ObjectModelSharedDimensions.true...relation connection='postgres.0fpp8b706t4gnd10dmf49110evbn' name='fact_outlier_metrics' table='[credit_dm].[fact_outlier_metrics]' type='table' />
+          <relation connection='postgres.0fpp8b706t4gnd10dmf49110evbn' name='dim_rating_type' table='[credit_dm].[dim_rating_type]' type='table' />
+          <relation connection='postgres.0fpp8b706t4gnd10dmf49110evbn' name='dim_security' table='[credit_dm].[dim_security]' type='table' />
+          <relation connection='postgres.0fpp8b706t4gnd10dmf49110evbn' name='fact_ratings_scd' table='[credit_dm].[fact_ratings_scd]' type='table' />
+          <relation connection='postgres.0fpp8b706t4gnd10dmf49110evbn' name='dim_rating_agency' table='[credit_dm].[dim_rating_agency]' type='table' />
+          <_.fcp.ObjectModelSharedDimensions.true...relation connection='postgres.0fpp8b706t4gnd10dmf49110evbn' name='kpi_rating_changes' table='[credit_dm].[kpi_rating_changes]' type='table' />
+        </relation>
+        <cols>
+          <map key='[country (dim_rating_agency)]' value='[dim_rating_agency].[country]' />
+          <map key='[country]' value='[dim_security].[country]' />
+          <map key='[created_at (dim_rating_agency)]' value='[dim_rating_agency].[created_at]' />
+          <map key='[created_at]' value='[dim_security].[created_at]' />
+          <map key='[effective_end_date]' value='[fact_ratings_scd].[effective_end_date]' />
+          <map key='[effective_start_date]' value='[fact_ratings_scd].[effective_start_date]' />
+          <map key='[id (kpi_rating_changes)]' value='[kpi_rating_changes].[id]' />
+          <map key='[id]' value='[fact_outlier_metrics].[id]' />
+          <map key='[is_active]' value='[fact_ratings_scd].[is_active]' />
+          <map key='[issue_date]' value='[dim_security].[issue_date]' />
+          <map key='[load_timestamp (fact_ratings_scd)]' value='[fact_ratings_scd].[load_timestamp]' />
+          <map key='[load_timestamp (kpi_rating_changes)]' value='[kpi_rating_changes].[load_timestamp]' />
+          <map key='[load_timestamp]' value='[fact_outlier_metrics].[load_timestamp]' />
+          <map key='[net_change]' value='[kpi_rating_changes].[net_change]' />
+          <map key='[original_rating]' value='[fact_ratings_scd].[original_rating]' />
+          <map key='[outlier_pct]' value='[fact_outlier_metrics].[outlier_pct]' />
+          <map key='[precision_score]' value='[fact_outlier_metrics].[precision_score]' />
+          <map key='[rating_change_count]' value='[kpi_rating_changes].[rating_change_count]' />
+          <map key='[rating_date]' value='[fact_outlier_metrics].[rating_date]' />
+          <map key='[rating_downgrades]' value='[kpi_rating_changes].[rating_downgrades]' />
+          <map key='[rating_outlook]' value='[fact_ratings_scd].[rating_outlook]' />
+          <map key='[rating_score]' value='[fact_ratings_scd].[rating_score]' />
+          <map key='[rating_type]' value='[dim_rating_type].[rating_type]' />
+          <map key='[rating_type_key (dim_rating_type)]' value='[dim_rating_type].[rating_type_key]' />
+          <map key='[rating_type_key (fact_ratings_scd)]' value='[fact_ratings_scd].[rating_type_key]' />
+          <map key='[rating_type_key]' value='[fact_outlier_metrics].[rating_type_key]' />
+          <map key='[rating_upgrades]' value='[kpi_rating_changes].[rating_upgrades]' />
+          <map key='[reason]' value='[fact_ratings_scd].[reason]' />
+          <map key='[scd_key]' value='[fact_ratings_scd].[scd_key]' />
+          <map key='[score_diff]' value='[fact_outlier_metrics].[score_diff]' />
+          <map key='[score_max]' value='[fact_outlier_metrics].[score_max]' />
+          <map key='[score_min]' value='[fact_outlier_metrics].[score_min]' />
+          <map key='[sector]' value='[dim_security].[sector]' />
+          <map key='[security_id]' value='[dim_security].[security_id]' />
+          <map key='[security_key (dim_security)]' value='[dim_security].[security_key]' />
+          <map key='[security_key (fact_ratings_scd)]' value='[fact_ratings_scd].[security_key]' />
+          <map key='[security_key]' value='[fact_outlier_metrics].[security_key]' />
+          <map key='[security_name]' value='[dim_security].[security_name]' />
+          <map key='[source_feed_id]' value='[fact_ratings_scd].[source_feed_id]' />
+          <map key='[standard_rating]' value='[fact_ratings_scd].[standard_rating]' />
+          <map key='[total_vendors]' value='[fact_outlier_metrics].[total_vendors]' />
+          <map key='[vendor_code]' value='[dim_rating_agency].[vendor_code]' />
+          <map key='[vendor_id]' value='[dim_rating_agency].[vendor_id]' />
+          <map key='[vendor_key (dim_rating_agency)]' value='[dim_rating_agency].[vendor_key]' />
+          <map key='[vendor_key (kpi_rating_changes)]' value='[kpi_rating_changes].[vendor_key]' />
+          <map key='[vendor_key]' value='[fact_ratings_scd].[vendor_key]' />
+          <map key='[vendor_name]' value='[dim_rating_agency].[vendor_name]' />
+          <map key='[year]' value='[kpi_rating_changes].[year]' />
+        </cols>
+        <metadata-records>
+          <_.fcp.ObjectModelSharedDimensions.true...metadata-record class='column'>
+            <remote-name>id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[id]</local-name>
+            <parent-name>[fact_outlier_metrics]</parent-name>
+            <remote-alias>id</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>false</contains-null>
+            <object-id>[fact_outlier_metrics (credit_dm.fact_outlier_metrics)_9F684F13033045DE8042F337AB66FA92]</object-id>
+          </_.fcp.ObjectModelSharedDimensions.true...metadata-record>
+          <_.fcp.ObjectModelSharedDimensions.true...metadata-record class='column'>
+            <remote-name>security_key</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[security_key]</local-name>
+            <parent-name>[fact_outlier_metrics]</parent-name>
+            <remote-alias>security_key</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+            <object-id>[fact_outlier_metrics (credit_dm.fact_outlier_metrics)_9F684F13033045DE8042F337AB66FA92]</object-id>
+          </_.fcp.ObjectModelSharedDimensions.true...metadata-record>
+          <_.fcp.ObjectModelSharedDimensions.true...metadata-record class='column'>
+            <remote-name>rating_date</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[rating_date]</local-name>
+            <parent-name>[fact_outlier_metrics]</parent-name>
+            <remote-alias>rating_date</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>false</contains-null>
+            <object-id>[fact_outlier_metrics (credit_dm.fact_outlier_metrics)_9F684F13033045DE8042F337AB66FA92]</object-id>
+          </_.fcp.ObjectModelSharedDimensions.true...metadata-record>
+          <_.fcp.ObjectModelSharedDimensions.true...metadata-record class='column'>
+            <remote-name>rating_type_key</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[rating_type_key]</local-name>
+            <parent-name>[fact_outlier_metrics]</parent-name>
+            <remote-alias>rating_type_key</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+            <object-id>[fact_outlier_metrics (credit_dm.fact_outlier_metrics)_9F684F13033045DE8042F337AB66FA92]</object-id>
+          </_.fcp.ObjectModelSharedDimensions.true...metadata-record>
+          <_.fcp.ObjectModelSharedDimensions.true...metadata-record class='column'>
+            <remote-name>outlier_pct</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[outlier_pct]</local-name>
+            <parent-name>[fact_outlier_metrics]</parent-name>
+            <remote-alias>outlier_pct</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>5</precision>
+            <scale>4</scale>
+            <contains-null>true</contains-null>
+            <object-id>[fact_outlier_metrics (credit_dm.fact_outlier_metrics)_9F684F13033045DE8042F337AB66FA92]</object-id>
+          </_.fcp.ObjectModelSharedDimensions.true...metadata-record>
+          <_.fcp.ObjectModelSharedDimensions.true...metadata-record class='column'>
+            <remote-name>total_vendors</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[total_vendors]</local-name>
+            <parent-name>[fact_outlier_metrics]</parent-name>
+            <remote-alias>total_vendors</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <object-id>[fact_outlier_metrics (credit_dm.fact_outlier_metrics)_9F684F13033045DE8042F337AB66FA92]</object-id>
+          </_.fcp.ObjectModelSharedDimensions.true...metadata-record>
+          <_.fcp.ObjectModelSharedDimensions.true...metadata-record class='column'>
+            <remote-name>score_min</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[score_min]</local-name>
+            <parent-name>[fact_outlier_metrics]</parent-name>
+            <remote-alias>score_min</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <object-id>[fact_outlier_metrics (credit_dm.fact_outlier_metrics)_9F684F13033045DE8042F337AB66FA92]</object-id>
+          </_.fcp.ObjectModelSharedDimensions.true...metadata-record>
+          <_.fcp.ObjectModelSharedDimensions.true...metadata-record class='column'>
+            <remote-name>score_max</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[score_max]</local-name>
+            <parent-name>[fact_outlier_metrics]</parent-name>
+            <remote-alias>score_max</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <object-id>[fact_outlier_metrics (credit_dm.fact_outlier_metrics)_9F684F13033045DE8042F337AB66FA92]</object-id>
+          </_.fcp.ObjectModelSharedDimensions.true...metadata-record>
+          <_.fcp.ObjectModelSharedDimensions.true...metadata-record class='column'>
+            <remote-name>score_diff</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[score_diff]</local-name>
+            <parent-name>[fact_outlier_metrics]</parent-name>
+            <remote-alias>score_diff</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <object-id>[fact_outlier_metrics (credit_dm.fact_outlier_metrics)_9F684F13033045DE8042F337AB66FA92]</object-id>
+          </_.fcp.ObjectModelSharedDimensions.true...metadata-record>
+          <_.fcp.ObjectModelSharedDimensions.true...metadata-record class='column'>
+            <remote-name>precision_score</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[precision_score]</local-name>
+            <parent-name>[fact_outlier_metrics]</parent-name>
+            <remote-alias>precision_score</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>5</precision>
+            <scale>4</scale>
+            <contains-null>true</contains-null>
+            <object-id>[fact_outlier_metrics (credit_dm.fact_outlier_metrics)_9F684F13033045DE8042F337AB66FA92]</object-id>
+          </_.fcp.ObjectModelSharedDimensions.true...metadata-record>
+          <_.fcp.ObjectModelSharedDimensions.true...metadata-record class='column'>
+            <remote-name>load_timestamp</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[load_timestamp]</local-name>
+            <parent-name>[fact_outlier_metrics]</parent-name>
+            <remote-alias>load_timestamp</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[fact_outlier_metrics (credit_dm.fact_outlier_metrics)_9F684F13033045DE8042F337AB66FA92]</object-id>
+          </_.fcp.ObjectModelSharedDimensions.true...metadata-record>
+          <metadata-record class='column'>
+            <remote-name>rating_type_key</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[rating_type_key (dim_rating_type)]</local-name>
+            <parent-name>[dim_rating_type]</parent-name>
+            <remote-alias>rating_type_key</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>false</contains-null>
+            <object-id>[dim_rating_type (credit_dm.dim_rating_type)_16814B125F374AFE8974A5409FF19AB7]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>rating_type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[rating_type]</local-name>
+            <parent-name>[dim_rating_type]</parent-name>
+            <remote-alias>rating_type</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <object-id>[dim_rating_type (credit_dm.dim_rating_type)_16814B125F374AFE8974A5409FF19AB7]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>security_key</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[security_key (dim_security)]</local-name>
+            <parent-name>[dim_security]</parent-name>
+            <remote-alias>security_key</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>false</contains-null>
+            <object-id>[dim_security (credit_dm.dim_security)_1320DB09673743E8A705E5811566DF30]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>security_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[security_id]</local-name>
+            <parent-name>[dim_security]</parent-name>
+            <remote-alias>security_id</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>false</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <object-id>[dim_security (credit_dm.dim_security)_1320DB09673743E8A705E5811566DF30]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>security_name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[security_name]</local-name>
+            <parent-name>[dim_security]</parent-name>
+            <remote-alias>security_name</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <object-id>[dim_security (credit_dm.dim_security)_1320DB09673743E8A705E5811566DF30]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>sector</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[sector]</local-name>
+            <parent-name>[dim_security]</parent-name>
+            <remote-alias>sector</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <object-id>[dim_security (credit_dm.dim_security)_1320DB09673743E8A705E5811566DF30]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>country</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[country]</local-name>
+            <parent-name>[dim_security]</parent-name>
+            <remote-alias>country</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <object-id>[dim_security (credit_dm.dim_security)_1320DB09673743E8A705E5811566DF30]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>issue_date</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[issue_date]</local-name>
+            <parent-name>[dim_security]</parent-name>
+            <remote-alias>issue_date</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[dim_security (credit_dm.dim_security)_1320DB09673743E8A705E5811566DF30]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>created_at</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[created_at]</local-name>
+            <parent-name>[dim_security]</parent-name>
+            <remote-alias>created_at</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[dim_security (credit_dm.dim_security)_1320DB09673743E8A705E5811566DF30]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>scd_key</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[scd_key]</local-name>
+            <parent-name>[fact_ratings_scd]</parent-name>
+            <remote-alias>scd_key</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>false</contains-null>
+            <object-id>[fact_ratings_scd (credit_dm.fact_ratings_scd)_C14FA641D66946219608DE371BF1B42F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>security_key</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[security_key (fact_ratings_scd)]</local-name>
+            <parent-name>[fact_ratings_scd]</parent-name>
+            <remote-alias>security_key</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>false</contains-null>
+            <object-id>[fact_ratings_scd (credit_dm.fact_ratings_scd)_C14FA641D66946219608DE371BF1B42F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>vendor_key</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[vendor_key]</local-name>
+            <parent-name>[fact_ratings_scd]</parent-name>
+            <remote-alias>vendor_key</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>false</contains-null>
+            <object-id>[fact_ratings_scd (credit_dm.fact_ratings_scd)_C14FA641D66946219608DE371BF1B42F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>rating_type_key</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[rating_type_key (fact_ratings_scd)]</local-name>
+            <parent-name>[fact_ratings_scd]</parent-name>
+            <remote-alias>rating_type_key</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+            <object-id>[fact_ratings_scd (credit_dm.fact_ratings_scd)_C14FA641D66946219608DE371BF1B42F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>original_rating</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[original_rating]</local-name>
+            <parent-name>[fact_ratings_scd]</parent-name>
+            <remote-alias>original_rating</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <object-id>[fact_ratings_scd (credit_dm.fact_ratings_scd)_C14FA641D66946219608DE371BF1B42F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>standard_rating</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[standard_rating]</local-name>
+            <parent-name>[fact_ratings_scd]</parent-name>
+            <remote-alias>standard_rating</remote-alias>
+            <ordinal>29</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <object-id>[fact_ratings_scd (credit_dm.fact_ratings_scd)_C14FA641D66946219608DE371BF1B42F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>rating_score</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[rating_score]</local-name>
+            <parent-name>[fact_ratings_scd]</parent-name>
+            <remote-alias>rating_score</remote-alias>
+            <ordinal>30</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <object-id>[fact_ratings_scd (credit_dm.fact_ratings_scd)_C14FA641D66946219608DE371BF1B42F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>rating_outlook</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[rating_outlook]</local-name>
+            <parent-name>[fact_ratings_scd]</parent-name>
+            <remote-alias>rating_outlook</remote-alias>
+            <ordinal>31</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <object-id>[fact_ratings_scd (credit_dm.fact_ratings_scd)_C14FA641D66946219608DE371BF1B42F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>effective_start_date</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[effective_start_date]</local-name>
+            <parent-name>[fact_ratings_scd]</parent-name>
+            <remote-alias>effective_start_date</remote-alias>
+            <ordinal>32</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>false</contains-null>
+            <object-id>[fact_ratings_scd (credit_dm.fact_ratings_scd)_C14FA641D66946219608DE371BF1B42F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>effective_end_date</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[effective_end_date]</local-name>
+            <parent-name>[fact_ratings_scd]</parent-name>
+            <remote-alias>effective_end_date</remote-alias>
+            <ordinal>33</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[fact_ratings_scd (credit_dm.fact_ratings_scd)_C14FA641D66946219608DE371BF1B42F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>is_active</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[is_active]</local-name>
+            <parent-name>[fact_ratings_scd]</parent-name>
+            <remote-alias>is_active</remote-alias>
+            <ordinal>34</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[fact_ratings_scd (credit_dm.fact_ratings_scd)_C14FA641D66946219608DE371BF1B42F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>source_feed_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[source_feed_id]</local-name>
+            <parent-name>[fact_ratings_scd]</parent-name>
+            <remote-alias>source_feed_id</remote-alias>
+            <ordinal>35</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <object-id>[fact_ratings_scd (credit_dm.fact_ratings_scd)_C14FA641D66946219608DE371BF1B42F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>reason</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[reason]</local-name>
+            <parent-name>[fact_ratings_scd]</parent-name>
+            <remote-alias>reason</remote-alias>
+            <ordinal>36</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <object-id>[fact_ratings_scd (credit_dm.fact_ratings_scd)_C14FA641D66946219608DE371BF1B42F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>load_timestamp</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[load_timestamp (fact_ratings_scd)]</local-name>
+            <parent-name>[fact_ratings_scd]</parent-name>
+            <remote-alias>load_timestamp</remote-alias>
+            <ordinal>37</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[fact_ratings_scd (credit_dm.fact_ratings_scd)_C14FA641D66946219608DE371BF1B42F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>vendor_key</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[vendor_key (dim_rating_agency)]</local-name>
+            <parent-name>[dim_rating_agency]</parent-name>
+            <remote-alias>vendor_key</remote-alias>
+            <ordinal>39</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>false</contains-null>
+            <object-id>[dim_rating_agency (credit_dm.dim_rating_agency)_FEBB128B0CFD45F0946DF5A809281258]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>vendor_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[vendor_id]</local-name>
+            <parent-name>[dim_rating_agency]</parent-name>
+            <remote-alias>vendor_id</remote-alias>
+            <ordinal>40</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <object-id>[dim_rating_agency (credit_dm.dim_rating_agency)_FEBB128B0CFD45F0946DF5A809281258]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>vendor_name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[vendor_name]</local-name>
+            <parent-name>[dim_rating_agency]</parent-name>
+            <remote-alias>vendor_name</remote-alias>
+            <ordinal>41</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>false</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <object-id>[dim_rating_agency (credit_dm.dim_rating_agency)_FEBB128B0CFD45F0946DF5A809281258]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>vendor_code</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[vendor_code]</local-name>
+            <parent-name>[dim_rating_agency]</parent-name>
+            <remote-alias>vendor_code</remote-alias>
+            <ordinal>42</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <object-id>[dim_rating_agency (credit_dm.dim_rating_agency)_FEBB128B0CFD45F0946DF5A809281258]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>country</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[country (dim_rating_agency)]</local-name>
+            <parent-name>[dim_rating_agency]</parent-name>
+            <remote-alias>country</remote-alias>
+            <ordinal>43</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <object-id>[dim_rating_agency (credit_dm.dim_rating_agency)_FEBB128B0CFD45F0946DF5A809281258]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>created_at</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[created_at (dim_rating_agency)]</local-name>
+            <parent-name>[dim_rating_agency]</parent-name>
+            <remote-alias>created_at</remote-alias>
+            <ordinal>44</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[dim_rating_agency (credit_dm.dim_rating_agency)_FEBB128B0CFD45F0946DF5A809281258]</object-id>
+          </metadata-record>
+          <_.fcp.ObjectModelSharedDimensions.true...metadata-record class='column'>
+            <remote-name>id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[id (kpi_rating_changes)]</local-name>
+            <parent-name>[kpi_rating_changes]</parent-name>
+            <remote-alias>id</remote-alias>
+            <ordinal>46</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>false</contains-null>
+            <object-id>[kpi_rating_changes (credit_dm.kpi_rating_changes)_67FC96C58A594AA694C781960C7F4091]</object-id>
+          </_.fcp.ObjectModelSharedDimensions.true...metadata-record>
+          <_.fcp.ObjectModelSharedDimensions.true...metadata-record class='column'>
+            <remote-name>vendor_key</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[vendor_key (kpi_rating_changes)]</local-name>
+            <parent-name>[kpi_rating_changes]</parent-name>
+            <remote-alias>vendor_key</remote-alias>
+            <ordinal>47</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+            <object-id>[kpi_rating_changes (credit_dm.kpi_rating_changes)_67FC96C58A594AA694C781960C7F4091]</object-id>
+          </_.fcp.ObjectModelSharedDimensions.true...metadata-record>
+          <_.fcp.ObjectModelSharedDimensions.true...metadata-record class='column'>
+            <remote-name>year</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[year]</local-name>
+            <parent-name>[kpi_rating_changes]</parent-name>
+            <remote-alias>year</remote-alias>
+            <ordinal>48</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>false</contains-null>
+            <object-id>[kpi_rating_changes (credit_dm.kpi_rating_changes)_67FC96C58A594AA694C781960C7F4091]</object-id>
+          </_.fcp.ObjectModelSharedDimensions.true...metadata-record>
+          <_.fcp.ObjectModelSharedDimensions.true...metadata-record class='column'>
+            <remote-name>rating_change_count</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[rating_change_count]</local-name>
+            <parent-name>[kpi_rating_changes]</parent-name>
+            <remote-alias>rating_change_count</remote-alias>
+            <ordinal>49</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <object-id>[kpi_rating_changes (credit_dm.kpi_rating_changes)_67FC96C58A594AA694C781960C7F4091]</object-id>
+          </_.fcp.ObjectModelSharedDimensions.true...metadata-record>
+          <_.fcp.ObjectModelSharedDimensions.true...metadata-record class='column'>
+            <remote-name>rating_upgrades</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[rating_upgrades]</local-name>
+            <parent-name>[kpi_rating_changes]</parent-name>
+            <remote-alias>rating_upgrades</remote-alias>
+            <ordinal>50</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <object-id>[kpi_rating_changes (credit_dm.kpi_rating_changes)_67FC96C58A594AA694C781960C7F4091]</object-id>
+          </_.fcp.ObjectModelSharedDimensions.true...metadata-record>
+          <_.fcp.ObjectModelSharedDimensions.true...metadata-record class='column'>
+            <remote-name>rating_downgrades</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[rating_downgrades]</local-name>
+            <parent-name>[kpi_rating_changes]</parent-name>
+            <remote-alias>rating_downgrades</remote-alias>
+            <ordinal>51</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <object-id>[kpi_rating_changes (credit_dm.kpi_rating_changes)_67FC96C58A594AA694C781960C7F4091]</object-id>
+          </_.fcp.ObjectModelSharedDimensions.true...metadata-record>
+          <_.fcp.ObjectModelSharedDimensions.true...metadata-record class='column'>
+            <remote-name>net_change</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[net_change]</local-name>
+            <parent-name>[kpi_rating_changes]</parent-name>
+            <remote-alias>net_change</remote-alias>
+            <ordinal>52</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <object-id>[kpi_rating_changes (credit_dm.kpi_rating_changes)_67FC96C58A594AA694C781960C7F4091]</object-id>
+          </_.fcp.ObjectModelSharedDimensions.true...metadata-record>
+          <_.fcp.ObjectModelSharedDimensions.true...metadata-record class='column'>
+            <remote-name>load_timestamp</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[load_timestamp (kpi_rating_changes)]</local-name>
+            <parent-name>[kpi_rating_changes]</parent-name>
+            <remote-alias>load_timestamp</remote-alias>
+            <ordinal>53</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[kpi_rating_changes (credit_dm.kpi_rating_changes)_67FC96C58A594AA694C781960C7F4091]</object-id>
+          </_.fcp.ObjectModelSharedDimensions.true...metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='dim_rating_agency' datatype='table' name='[__tableau_internal_object_id__].[dim_rating_agency (credit_dm.dim_rating_agency)_FEBB128B0CFD45F0946DF5A809281258]' role='measure' type='quantitative' />
+      <column caption='dim_rating_type' datatype='table' name='[__tableau_internal_object_id__].[dim_rating_type (credit_dm.dim_rating_type)_16814B125F374AFE8974A5409FF19AB7]' role='measure' type='quantitative' />
+      <column caption='dim_security' datatype='table' name='[__tableau_internal_object_id__].[dim_security (credit_dm.dim_security)_1320DB09673743E8A705E5811566DF30]' role='measure' type='quantitative' />
+      <column caption='fact_outlier_metrics' datatype='table' name='[__tableau_internal_object_id__].[fact_outlier_metrics (credit_dm.fact_outlier_metrics)_9F684F13033045DE8042F337AB66FA92]' role='measure' type='quantitative' />
+      <column caption='fact_ratings_scd' datatype='table' name='[__tableau_internal_object_id__].[fact_ratings_scd (credit_dm.fact_ratings_scd)_C14FA641D66946219608DE371BF1B42F]' role='measure' type='quantitative' />
+      <column caption='kpi_rating_changes' datatype='table' name='[__tableau_internal_object_id__].[kpi_rating_changes (credit_dm.kpi_rating_changes)_67FC96C58A594AA694C781960C7F4091]' role='measure' type='quantitative' />
+      <column caption='Country (Dim Rating Agency)' datatype='string' name='[country (dim_rating_agency)]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+      <column caption='Country' datatype='string' name='[country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+      <column caption='Created At (Dim Rating Agency)' datatype='datetime' name='[created_at (dim_rating_agency)]' role='dimension' type='ordinal' />
+      <column caption='Created At' datatype='datetime' name='[created_at]' role='dimension' type='ordinal' />
+      <column caption='Effective End Date' datatype='date' name='[effective_end_date]' role='dimension' type='ordinal' />
+      <column caption='Effective Start Date' datatype='date' name='[effective_start_date]' role='dimension' type='ordinal' />
+      <column caption='Id (Kpi Rating Changes)' datatype='integer' name='[id (kpi_rating_changes)]' role='dimension' type='ordinal' />
+      <column caption='Id' datatype='integer' name='[id]' role='dimension' type='ordinal' />
+      <column caption='Is Active' datatype='boolean' name='[is_active]' role='dimension' type='nominal' />
+      <column caption='Issue Date' datatype='date' name='[issue_date]' role='dimension' type='ordinal' />
+      <column caption='Load Timestamp (Fact Ratings Scd)' datatype='datetime' name='[load_timestamp (fact_ratings_scd)]' role='dimension' type='ordinal' />
+      <column caption='Load Timestamp (Kpi Rating Changes)' datatype='datetime' name='[load_timestamp (kpi_rating_changes)]' role='dimension' type='ordinal' />
+      <column caption='Load Timestamp' datatype='datetime' name='[load_timestamp]' role='dimension' type='ordinal' />
+      <column caption='Net Change' datatype='integer' name='[net_change]' role='measure' type='quantitative' />
+      <column caption='Original Rating' datatype='string' name='[original_rating]' role='dimension' type='nominal' />
+      <column caption='Outlier Pct' datatype='real' name='[outlier_pct]' role='measure' type='quantitative' />
+      <column caption='Precision Score' datatype='real' name='[precision_score]' role='measure' type='quantitative' />
+      <column caption='Rating Change Count' datatype='integer' name='[rating_change_count]' role='measure' type='quantitative' />
+      <column caption='Rating Date' datatype='date' name='[rating_date]' role='dimension' type='ordinal' />
+      <column caption='Rating Downgrades' datatype='integer' name='[rating_downgrades]' role='measure' type='quantitative' />
+      <column caption='Rating Outlook' datatype='string' name='[rating_outlook]' role='dimension' type='nominal' />
+      <column caption='Rating Score' datatype='integer' name='[rating_score]' role='measure' type='quantitative' />
+      <column caption='Rating Type' datatype='string' name='[rating_type]' role='dimension' type='nominal' />
+      <column aggregation='Sum' caption='Rating Type Key (Dim Rating Type)' datatype='integer' name='[rating_type_key (dim_rating_type)]' role='dimension' type='ordinal' />
+      <column aggregation='Sum' caption='Rating Type Key (Fact Ratings Scd)' datatype='integer' name='[rating_type_key (fact_ratings_scd)]' role='dimension' type='ordinal' />
+      <column aggregation='Sum' caption='Rating Type Key' datatype='integer' name='[rating_type_key]' role='dimension' type='ordinal' />
+      <column caption='Rating Upgrades' datatype='integer' name='[rating_upgrades]' role='measure' type='quantitative' />
+      <column caption='Reason' datatype='string' name='[reason]' role='dimension' type='nominal' />
+      <column caption='Scd Key' datatype='integer' name='[scd_key]' role='dimension' type='ordinal' />
+      <column caption='Score Diff' datatype='integer' name='[score_diff]' role='measure' type='quantitative' />
+      <column caption='Score Max' datatype='integer' name='[score_max]' role='measure' type='quantitative' />
+      <column caption='Score Min' datatype='integer' name='[score_min]' role='measure' type='quantitative' />
+      <column caption='Sector' datatype='string' name='[sector]' role='dimension' type='nominal' />
+      <column caption='Security Id' datatype='string' name='[security_id]' role='dimension' type='nominal' />
+      <column aggregation='Sum' caption='Security Key (Dim Security)' datatype='integer' name='[security_key (dim_security)]' role='dimension' type='ordinal' />
+      <column aggregation='Sum' caption='Security Key (Fact Ratings Scd)' datatype='integer' name='[security_key (fact_ratings_scd)]' role='dimension' type='ordinal' />
+      <column aggregation='Sum' caption='Security Key' datatype='integer' name='[security_key]' role='dimension' type='ordinal' />
+      <column caption='Security Name' datatype='string' name='[security_name]' role='dimension' type='nominal' />
+      <column caption='Source Feed Id' datatype='string' name='[source_feed_id]' role='dimension' type='nominal' />
+      <column caption='Standard Rating' datatype='string' name='[standard_rating]' role='dimension' type='nominal' />
+      <column caption='Total Vendors' datatype='integer' name='[total_vendors]' role='measure' type='quantitative' />
+      <column caption='Vendor Code' datatype='string' name='[vendor_code]' role='dimension' type='nominal' />
+      <column caption='Vendor Id' datatype='string' name='[vendor_id]' role='dimension' type='nominal' />
+      <column aggregation='Sum' caption='Vendor Key (Dim Rating Agency)' datatype='integer' name='[vendor_key (dim_rating_agency)]' role='dimension' type='ordinal' />
+      <column aggregation='Sum' caption='Vendor Key (Kpi Rating Changes)' datatype='integer' name='[vendor_key (kpi_rating_changes)]' role='dimension' type='ordinal' />
+      <column aggregation='Sum' caption='Vendor Key' datatype='integer' name='[vendor_key]' role='dimension' type='ordinal' />
+      <column caption='Vendor Name' datatype='string' name='[vendor_name]' role='dimension' type='nominal' />
+      <column caption='Year' datatype='integer' name='[year]' role='dimension' type='quantitative' />
+      <column-instance column='[vendor_name]' derivation='None' name='[none:vendor_name:nk]' pivot='key' type='nominal' />
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:vendor_name:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;CARE&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Kroll&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;ICRA&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Morningstar&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Fitch&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;Moody&apos;s&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;DBRS&quot;</bucket>
+            </map>
+            <map to='#ff9da7'>
+              <bucket>&quot;S&amp;P&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;India&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='dim_rating_agency' id='dim_rating_agency (credit_dm.dim_rating_agency)_FEBB128B0CFD45F0946DF5A809281258'>
+            <properties context=''>
+              <relation connection='postgres.0fpp8b706t4gnd10dmf49110evbn' name='dim_rating_agency' table='[credit_dm].[dim_rating_agency]' type='table' />
+            </properties>
+          </object>
+          <object caption='dim_rating_type' id='dim_rating_type (credit_dm.dim_rating_type)_16814B125F374AFE8974A5409FF19AB7'>
+            <properties context=''>
+              <relation connection='postgres.0fpp8b706t4gnd10dmf49110evbn' name='dim_rating_type' table='[credit_dm].[dim_rating_type]' type='table' />
+            </properties>
+          </object>
+          <object caption='dim_security' id='dim_security (credit_dm.dim_security)_1320DB09673743E8A705E5811566DF30'>
+            <properties context=''>
+              <relation connection='postgres.0fpp8b706t4gnd10dmf49110evbn' name='dim_security' table='[credit_dm].[dim_security]' type='table' />
+            </properties>
+          </object>
+          <_.fcp.ObjectModelSharedDimensions.true...object caption='fact_outlier_metrics' id='fact_outlier_metrics (credit_dm.fact_outlier_metrics)_9F684F13033045DE8042F337AB66FA92'>
+            <properties context=''>
+              <relation connection='postgres.0fpp8b706t4gnd10dmf49110evbn' name='fact_outlier_metrics' table='[credit_dm].[fact_outlier_metrics]' type='table' />
+            </properties>
+          </_.fcp.ObjectModelSharedDimensions.true...object>
+          <object caption='fact_ratings_scd' id='fact_ratings_scd (credit_dm.fact_ratings_scd)_C14FA641D66946219608DE371BF1B42F'>
+            <properties context=''>
+              <relation connection='postgres.0fpp8b706t4gnd10dmf49110evbn' name='fact_ratings_scd' table='[credit_dm].[fact_ratings_scd]' type='table' />
+            </properties>
+          </object>
+          <_.fcp.ObjectModelSharedDimensions.true...object caption='kpi_rating_changes' id='kpi_rating_changes (credit_dm.kpi_rating_changes)_67FC96C58A594AA694C781960C7F4091'>
+            <properties context=''>
+              <relation connection='postgres.0fpp8b706t4gnd10dmf49110evbn' name='kpi_rating_changes' table='[credit_dm].[kpi_rating_changes]' type='table' />
+            </properties>
+          </_.fcp.ObjectModelSharedDimensions.true...object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[vendor_key]' />
+              <expression op='[vendor_key (dim_rating_agency)]' />
+            </expression>
+            <first-end-point guaranteed-value='true' is-db-set-guaranteed-value='true' object-id='fact_ratings_scd (credit_dm.fact_ratings_scd)_C14FA641D66946219608DE371BF1B42F' />
+            <second-end-point is-db-set-unique-key='true' object-id='dim_rating_agency (credit_dm.dim_rating_agency)_FEBB128B0CFD45F0946DF5A809281258' unique-key='true' />
+          </relationship>
+          <_.fcp.ObjectModelSharedDimensions.true...relationship>
+            <expression op='='>
+              <expression op='[vendor_key (kpi_rating_changes)]' />
+              <expression op='[vendor_key (dim_rating_agency)]' />
+            </expression>
+            <first-end-point object-id='kpi_rating_changes (credit_dm.kpi_rating_changes)_67FC96C58A594AA694C781960C7F4091' />
+            <second-end-point is-db-set-unique-key='true' object-id='dim_rating_agency (credit_dm.dim_rating_agency)_FEBB128B0CFD45F0946DF5A809281258' unique-key='true' />
+          </_.fcp.ObjectModelSharedDimensions.true...relationship>
+          <_.fcp.ObjectModelSharedDimensions.true...relationship>
+            <expression op='='>
+              <expression op='[rating_type_key]' />
+              <expression op='[rating_type_key (dim_rating_type)]' />
+            </expression>
+            <first-end-point object-id='fact_outlier_metrics (credit_dm.fact_outlier_metrics)_9F684F13033045DE8042F337AB66FA92' />
+            <second-end-point is-db-set-unique-key='true' object-id='dim_rating_type (credit_dm.dim_rating_type)_16814B125F374AFE8974A5409FF19AB7' unique-key='true' />
+          </_.fcp.ObjectModelSharedDimensions.true...relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[rating_type_key (fact_ratings_scd)]' />
+              <expression op='[rating_type_key (dim_rating_type)]' />
+            </expression>
+            <first-end-point object-id='fact_ratings_scd (credit_dm.fact_ratings_scd)_C14FA641D66946219608DE371BF1B42F' />
+            <second-end-point is-db-set-unique-key='true' object-id='dim_rating_type (credit_dm.dim_rating_type)_16814B125F374AFE8974A5409FF19AB7' unique-key='true' />
+          </relationship>
+          <_.fcp.ObjectModelSharedDimensions.true...relationship>
+            <expression op='='>
+              <expression op='[security_key]' />
+              <expression op='[security_key (dim_security)]' />
+            </expression>
+            <first-end-point object-id='fact_outlier_metrics (credit_dm.fact_outlier_metrics)_9F684F13033045DE8042F337AB66FA92' />
+            <second-end-point is-db-set-unique-key='true' object-id='dim_security (credit_dm.dim_security)_1320DB09673743E8A705E5811566DF30' unique-key='true' />
+          </_.fcp.ObjectModelSharedDimensions.true...relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[security_key (fact_ratings_scd)]' />
+              <expression op='[security_key (dim_security)]' />
+            </expression>
+            <first-end-point guaranteed-value='true' is-db-set-guaranteed-value='true' object-id='fact_ratings_scd (credit_dm.fact_ratings_scd)_C14FA641D66946219608DE371BF1B42F' />
+            <second-end-point is-db-set-unique-key='true' object-id='dim_security (credit_dm.dim_security)_1320DB09673743E8A705E5811566DF30' unique-key='true' />
+          </relationship>
+        </relationships>
+      </object-graph>
+    </datasource>
+    <datasource inline='true' name='Clipboard_20251106T111526' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Clipboard_20251106T111526' name='Clipboard_20251106T111526leaf'>
+            <connection class='textscan' directory='C:/Users/vivek/OneDrive/Documents/My Tableau Repository/Datasources' filename='Clipboard_20251106T111526.txt' />
+          </named-connection>
+        </named-connections>
+        <relation connection='Clipboard_20251106T111526leaf' name='Clipboard_20251106T111526#txt' table='[Clipboard_20251106T111526#txt]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_IN' separator=' '>
+            <column datatype='real' name='Avg.' ordinal='0' />
+            <column datatype='string' name='Precision' ordinal='1' />
+            <column datatype='string' name='Score' ordinal='2' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Clipboard_20251106T111526#txt]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;₹&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot; &quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_IN&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <_.fcp.ObjectModelSharedDimensions.true...metadata-record class='column'>
+            <remote-name>Avg.</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Avg.]</local-name>
+            <parent-name>[Clipboard_20251106T111526#txt]</parent-name>
+            <remote-alias>Avg.</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Clipboard_20251106T111526]</object-id>
+          </_.fcp.ObjectModelSharedDimensions.true...metadata-record>
+          <_.fcp.ObjectModelSharedDimensions.true...metadata-record class='column'>
+            <remote-name>Precision</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Precision]</local-name>
+            <parent-name>[Clipboard_20251106T111526#txt]</parent-name>
+            <remote-alias>Precision</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[Clipboard_20251106T111526]</object-id>
+          </_.fcp.ObjectModelSharedDimensions.true...metadata-record>
+          <_.fcp.ObjectModelSharedDimensions.true...metadata-record class='column'>
+            <remote-name>Score</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Score]</local-name>
+            <parent-name>[Clipboard_20251106T111526#txt]</parent-name>
+            <remote-alias>Score</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[Clipboard_20251106T111526]</object-id>
+          </_.fcp.ObjectModelSharedDimensions.true...metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Clipboard_20251106T111526' datatype='table' name='[__tableau_internal_object_id__].[Clipboard_20251106T111526]' role='measure' type='quantitative' />
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;India&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <_.fcp.ObjectModelSharedDimensions.true...object caption='Clipboard_20251106T111526' id='Clipboard_20251106T111526'>
+            <properties context=''>
+              <relation connection='Clipboard_20251106T111526leaf' name='Clipboard_20251106T111526#txt' table='[Clipboard_20251106T111526#txt]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_IN' separator=' '>
+                  <column datatype='real' name='Avg.' ordinal='0' />
+                  <column datatype='string' name='Precision' ordinal='1' />
+                  <column datatype='string' name='Score' ordinal='2' />
+                </columns>
+              </relation>
+            </properties>
+          </_.fcp.ObjectModelSharedDimensions.true...object>
+        </objects>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
+  <actions>
+    <action caption='Highlight 1 (generated)' name='[Action1_9B69AEBAB3C748A8AEA38D0079562CEB]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Dashboard 1' type='sheet' />
+      <command command='tsc:brush'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='Dashboard 1' />
+      </command>
+    </action>
+  </actions>
+  <worksheets>
+    <worksheet name=' Outlier Severity'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1'>&lt;Sheet Name&gt;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='fact_outlier_metrics (credit_dm.fact_outlier_metrics)+ (credit_rating_dm)' name='federated.0qilped01smibi102kb790w4gcys' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0qilped01smibi102kb790w4gcys'>
+            <column-instance column='[rating_type]' derivation='None' name='[none:rating_type:nk]' pivot='key' type='nominal' />
+            <column caption='Outlier Pct' datatype='real' name='[outlier_pct]' role='measure' type='quantitative' />
+            <column caption='Rating Type' datatype='string' name='[rating_type]' role='dimension' type='nominal' />
+            <column caption='Score Diff' datatype='integer' name='[score_diff]' role='measure' type='quantitative' />
+            <column caption='Score Max' datatype='integer' name='[score_max]' role='measure' type='quantitative' />
+            <column caption='Score Min' datatype='integer' name='[score_min]' role='measure' type='quantitative' />
+            <column-instance column='[outlier_pct]' derivation='Sum' name='[sum:outlier_pct:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[score_diff]' derivation='Sum' name='[sum:score_diff:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[score_max]' derivation='Sum' name='[sum:score_max:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[score_min]' derivation='Sum' name='[sum:score_min:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+            <format attr='tick-color' value='#00000000' />
+          </style-rule>
+          <style-rule element='dropline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+          <style-rule element='zeroline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0qilped01smibi102kb790w4gcys].[sum:outlier_pct:qk]' />
+              <tooltip column='[federated.0qilped01smibi102kb790w4gcys].[sum:score_diff:qk]' />
+              <tooltip column='[federated.0qilped01smibi102kb790w4gcys].[sum:score_max:qk]' />
+              <tooltip column='[federated.0qilped01smibi102kb790w4gcys].[sum:score_min:qk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#757575'>Rating Type:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0qilped01smibi102kb790w4gcys].[none:rating_type:nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>Outlier Pct:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0qilped01smibi102kb790w4gcys].[sum:outlier_pct:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>Score Diff:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0qilped01smibi102kb790w4gcys].[sum:score_diff:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>Score Max:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0qilped01smibi102kb790w4gcys].[sum:score_max:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>Score Min:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0qilped01smibi102kb790w4gcys].[sum:score_min:qk]>]]></run>
+                <run>Æ&#10;&#10;</run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='trendline'>
+                <format attr='stroke-size' value='0' />
+                <format attr='line-visibility' value='off' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0qilped01smibi102kb790w4gcys].[sum:score_diff:qk]</rows>
+        <cols>[federated.0qilped01smibi102kb790w4gcys].[none:rating_type:nk]</cols>
+      </table>
+      <simple-id uuid='{803D651F-CB97-44BE-B7A5-568D8FC934B5}' />
+    </worksheet>
+    <worksheet name='Country Comparison'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontcolor='#000000' fontname='Benton Sans Book'>Country Comparison</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='fact_outlier_metrics (credit_dm.fact_outlier_metrics)+ (credit_rating_dm)' name='federated.0qilped01smibi102kb790w4gcys' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.0qilped01smibi102kb790w4gcys'>
+            <column-instance column='[rating_score]' derivation='Avg' name='[avg:rating_score:qk]' pivot='key' type='quantitative' />
+            <column caption='Country' datatype='string' name='[country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column-instance column='[country]' derivation='None' name='[none:country:nk]' pivot='key' type='nominal' />
+            <column caption='Rating Score' datatype='integer' name='[rating_score]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0qilped01smibi102kb790w4gcys].[none:country:nk]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:country:nk]' member='&quot;Canada&quot;' />
+              <groupfilter function='member' level='[none:country:nk]' member='&quot;Germany&quot;' />
+              <groupfilter function='member' level='[none:country:nk]' member='&quot;India&quot;' />
+              <groupfilter function='member' level='[none:country:nk]' member='&quot;Japan&quot;' />
+              <groupfilter function='member' level='[none:country:nk]' member='&quot;UK&quot;' />
+              <groupfilter function='member' level='[none:country:nk]' member='&quot;USA&quot;' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.0qilped01smibi102kb790w4gcys].[none:country:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.0qilped01smibi102kb790w4gcys].[Longitude (generated)]' field-type='quantitative' max='43503473.922524393' min='5469498.8654355109' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.0qilped01smibi102kb790w4gcys].[Latitude (generated)]' field-type='quantitative' max='17960191.805647343' min='-5415169.7224066146' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.23999999463558197' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <lod column='[federated.0qilped01smibi102kb790w4gcys].[none:country:nk]' />
+              <color column='[federated.0qilped01smibi102kb790w4gcys].[avg:rating_score:qk]' />
+              <geometry column='[federated.0qilped01smibi102kb790w4gcys].[Geometry (generated)]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0qilped01smibi102kb790w4gcys].[Latitude (generated)]</rows>
+        <cols>[federated.0qilped01smibi102kb790w4gcys].[Longitude (generated)]</cols>
+      </table>
+      <simple-id uuid='{5156E37F-E401-4F6D-AAFF-F1EC110F1FFA}' />
+    </worksheet>
+    <worksheet name='KPI – Avg Precision Score'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontcolor='#f28e2b' fontname='Benton Sans Book' fontsize='16'>Average Precision Score</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='fact_outlier_metrics (credit_dm.fact_outlier_metrics)+ (credit_rating_dm)' name='federated.0qilped01smibi102kb790w4gcys' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0qilped01smibi102kb790w4gcys'>
+            <column-instance column='[precision_score]' derivation='Avg' name='[avg:precision_score:qk]' pivot='key' type='quantitative' />
+            <column caption='Precision Score' datatype='real' name='[precision_score]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.0qilped01smibi102kb790w4gcys].[avg:precision_score:qk]' value='p0.00%' />
+            <format attr='text-orientation' data-class='subtotal' field='[federated.0qilped01smibi102kb790w4gcys].[avg:precision_score:qk]' value='0' />
+            <format attr='text-align' field='[federated.0qilped01smibi102kb790w4gcys].[avg:precision_score:qk]' value='right' />
+            <format attr='color' field='[federated.0qilped01smibi102kb790w4gcys].[avg:precision_score:qk]' value='#000000' />
+            <format attr='font-weight' field='[federated.0qilped01smibi102kb790w4gcys].[avg:precision_score:qk]' value='bold' />
+            <format attr='text-align' data-class='subtotal' field='[federated.0qilped01smibi102kb790w4gcys].[avg:precision_score:qk]' value='center' />
+            <format attr='height' value='20' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <text column='[federated.0qilped01smibi102kb790w4gcys].[avg:precision_score:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-align' value='center' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='size' value='2.1104972362518311' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{540F03E1-6889-4D2E-ACE4-C51B90F3B859}' />
+    </worksheet>
+    <worksheet name='KPI – Net Change'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontcolor='#4e79a7' fontname='Benton Sans Book' fontsize='16'>Net Rating Change</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='fact_outlier_metrics (credit_dm.fact_outlier_metrics)+ (credit_rating_dm)' name='federated.0qilped01smibi102kb790w4gcys' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0qilped01smibi102kb790w4gcys'>
+            <column caption='Net Change' datatype='integer' name='[net_change]' role='measure' type='quantitative' />
+            <column-instance column='[net_change]' derivation='Sum' name='[sum:net_change:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='height' value='19' />
+            <format attr='color' value='#000000' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <text column='[federated.0qilped01smibi102kb790w4gcys].[sum:net_change:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-align' value='center' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='size' value='2.7292816638946533' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{5BE6691F-9C9C-4218-98DE-EDC2B6BEC87E}' />
+    </worksheet>
+    <worksheet name='KPI – Total Downgrades'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontcolor='#f17b79' fontname='Benton Sans Book' fontsize='16'>Total Downgrades</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='fact_outlier_metrics (credit_dm.fact_outlier_metrics)+ (credit_rating_dm)' name='federated.0qilped01smibi102kb790w4gcys' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0qilped01smibi102kb790w4gcys'>
+            <column caption='Rating Downgrades' datatype='integer' name='[rating_downgrades]' role='measure' type='quantitative' />
+            <column-instance column='[rating_downgrades]' derivation='Sum' name='[sum:rating_downgrades:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='color' value='#000000' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-align' scope='rows' value='left' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <text column='[federated.0qilped01smibi102kb790w4gcys].[sum:rating_downgrades:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-align' value='center' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='size' value='2.4640884399414062' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{49101267-1C1E-49DB-8F19-DD8F8FAE1650}' />
+    </worksheet>
+    <worksheet name='KPI – Total Upgrade'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontcolor='#59a14f' fontname='Benton Sans Book' fontsize='16'>Total Upgrades</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='fact_outlier_metrics (credit_dm.fact_outlier_metrics)+ (credit_rating_dm)' name='federated.0qilped01smibi102kb790w4gcys' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0qilped01smibi102kb790w4gcys'>
+            <column caption='Rating Upgrades' datatype='integer' name='[rating_upgrades]' role='measure' type='quantitative' />
+            <column-instance column='[rating_upgrades]' derivation='Sum' name='[sum:rating_upgrades:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.0qilped01smibi102kb790w4gcys].[sum:rating_upgrades:qk]' included-values='in-range'>
+            <min>1123</min>
+            <max>1123</max>
+          </filter>
+          <slices>
+            <column>[federated.0qilped01smibi102kb790w4gcys].[sum:rating_upgrades:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='color' value='#000000' />
+            <format attr='cell-w' value='20' />
+            <format attr='cell-h' value='20' />
+            <format attr='cell' value='20' />
+            <format attr='cell-q' value='100' />
+            <format attr='width' value='19' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='band-size' scope='rows' value='2' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <text column='[federated.0qilped01smibi102kb790w4gcys].[sum:rating_upgrades:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-align' value='center' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='size' value='1.5932043790817261' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='aspect' value='0' />
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{48C01AA0-C099-44D1-965E-9EAD345D2679}' />
+    </worksheet>
+    <worksheet name='Outlier % Trend'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontcolor='#000000' fontname='Benton Sans Book'>Outlier % Trend</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='fact_outlier_metrics (credit_dm.fact_outlier_metrics)+ (credit_rating_dm)' name='federated.0qilped01smibi102kb790w4gcys' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0qilped01smibi102kb790w4gcys'>
+            <column-instance column='[outlier_pct]' derivation='Avg' name='[avg:outlier_pct:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[rating_type]' derivation='None' name='[none:rating_type:nk]' pivot='key' type='nominal' />
+            <column caption='Outlier Pct' datatype='real' name='[outlier_pct]' role='measure' type='quantitative' />
+            <column caption='Rating Date' datatype='date' name='[rating_date]' role='dimension' type='ordinal' />
+            <column caption='Rating Type' datatype='string' name='[rating_type]' role='dimension' type='nominal' />
+            <column-instance column='[rating_date]' derivation='Year' name='[yr:rating_date:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0qilped01smibi102kb790w4gcys].[none:rating_type:nk]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:rating_type:nk]' member='&quot;Bond Rating&quot;' />
+              <groupfilter function='member' level='[none:rating_type:nk]' member='&quot;Corporate Rating&quot;' />
+              <groupfilter function='member' level='[none:rating_type:nk]' member='&quot;Issuer Rating&quot;' />
+              <groupfilter function='member' level='[none:rating_type:nk]' member='&quot;Long Term&quot;' />
+              <groupfilter function='member' level='[none:rating_type:nk]' member='&quot;Short Term&quot;' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.0qilped01smibi102kb790w4gcys].[none:rating_type:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='1' field='[federated.0qilped01smibi102kb790w4gcys].[avg:outlier_pct:qk]' field-type='quantitative' fold='true' scope='rows' synchronized='true' type='space' />
+            <format attr='display' class='1' field='[federated.0qilped01smibi102kb790w4gcys].[avg:outlier_pct:qk]' scope='rows' value='false' />
+            <format attr='stroke-size' value='0' />
+            <format attr='tick-color' value='#00000000' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.0qilped01smibi102kb790w4gcys].[yr:rating_date:ok]' value='108' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='border-width' data-class='total' value='0' />
+            <format attr='border-style' data-class='total' value='none' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-format' field='[federated.0qilped01smibi102kb790w4gcys].[avg:outlier_pct:qk]' value='p0.00%' />
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='border-width' data-class='subtotal' scope='rows' value='0' />
+            <format attr='border-style' data-class='subtotal' scope='rows' value='none' />
+            <format attr='border-width' data-class='total' value='0' />
+            <format attr='border-style' data-class='total' value='none' />
+          </style-rule>
+          <style-rule element='dropline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+          <style-rule element='zeroline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+            <format attr='line-pattern-only' scope='rows' value='solid' />
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+            <format attr='line-pattern-only' scope='cols' value='solid' />
+            <format attr='stroke-size' scope='cols' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Line' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+                <format attr='mark-color' value='#4e79a7' />
+                <format attr='has-stroke' value='true' />
+                <format attr='stroke-color' value='#4e79a7' />
+                <format attr='mark-markers-mode' value='all' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+              <style-rule element='trendline'>
+                <format attr='stroke-size' value='0' />
+                <format attr='line-visibility' value='off' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.0qilped01smibi102kb790w4gcys].[avg:outlier_pct:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Line' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+                <format attr='mark-color' value='#4e79a7' />
+                <format attr='has-stroke' value='true' />
+                <format attr='stroke-color' value='#4e79a7' />
+                <format attr='mark-markers-mode' value='all' />
+              </style-rule>
+              <style-rule element='trendline'>
+                <format attr='line-pattern-only' value='solid' />
+                <format attr='stroke-size' value='0' />
+                <format attr='line-visibility' value='off' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='3' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.0qilped01smibi102kb790w4gcys].[avg:outlier_pct:qk]' y-index='1'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+                <format attr='mark-color' value='#ffffff' />
+                <format attr='has-stroke' value='true' />
+                <format attr='stroke-color' value='#4e79a7' />
+                <format attr='mark-markers-mode' value='all' />
+              </style-rule>
+              <style-rule element='trendline'>
+                <format attr='stroke-size' value='0' />
+                <format attr='line-visibility' value='off' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.0qilped01smibi102kb790w4gcys].[avg:outlier_pct:qk] + [federated.0qilped01smibi102kb790w4gcys].[avg:outlier_pct:qk])</rows>
+        <cols>[federated.0qilped01smibi102kb790w4gcys].[yr:rating_date:ok]</cols>
+      </table>
+      <simple-id uuid='{5D066A5B-2BDD-462E-AA64-429DC43E087A}' />
+    </worksheet>
+    <worksheet name='Rating Trend by Vendor'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true'>&lt;Sheet Name&gt;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='fact_outlier_metrics (credit_dm.fact_outlier_metrics)+ (credit_rating_dm)' name='federated.0qilped01smibi102kb790w4gcys' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0qilped01smibi102kb790w4gcys'>
+            <column-instance column='[rating_score]' derivation='Avg' name='[avg:rating_score:qk]' pivot='key' type='quantitative' />
+            <column caption='Effective Start Date' datatype='date' name='[effective_start_date]' role='dimension' type='ordinal' />
+            <column-instance column='[rating_type]' derivation='None' name='[none:rating_type:nk]' pivot='key' type='nominal' />
+            <column-instance column='[vendor_name]' derivation='None' name='[none:vendor_name:nk]' pivot='key' type='nominal' />
+            <column caption='Rating Score' datatype='integer' name='[rating_score]' role='measure' type='quantitative' />
+            <column caption='Rating Type' datatype='string' name='[rating_type]' role='dimension' type='nominal' />
+            <column caption='Vendor Name' datatype='string' name='[vendor_name]' role='dimension' type='nominal' />
+            <column-instance column='[effective_start_date]' derivation='Year' name='[yr:effective_start_date:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0qilped01smibi102kb790w4gcys].[none:rating_type:nk]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:rating_type:nk]' member='&quot;Bond Rating&quot;' />
+              <groupfilter function='member' level='[none:rating_type:nk]' member='&quot;Corporate Rating&quot;' />
+              <groupfilter function='member' level='[none:rating_type:nk]' member='&quot;Issuer Rating&quot;' />
+              <groupfilter function='member' level='[none:rating_type:nk]' member='&quot;Long Term&quot;' />
+              <groupfilter function='member' level='[none:rating_type:nk]' member='&quot;Short Term&quot;' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.0qilped01smibi102kb790w4gcys].[none:rating_type:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='header'>
+            <format attr='border-width' data-class='total' scope='cols' value='0' />
+            <format attr='border-style' data-class='total' scope='cols' value='none' />
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='border-width' data-class='total' scope='cols' value='0' />
+            <format attr='border-style' data-class='total' scope='cols' value='none' />
+            <format attr='border-width' data-class='total' scope='rows' value='0' />
+            <format attr='border-style' data-class='total' scope='rows' value='none' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='stroke-size' scope='cols' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.0qilped01smibi102kb790w4gcys].[none:vendor_name:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0qilped01smibi102kb790w4gcys].[avg:rating_score:qk]</rows>
+        <cols>[federated.0qilped01smibi102kb790w4gcys].[yr:effective_start_date:ok]</cols>
+      </table>
+      <simple-id uuid='{4E2969C0-C1F7-40B5-8EEB-F94581C1C531}' />
+    </worksheet>
+    <worksheet name='Top Outliers'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1'>&lt;Sheet Name&gt;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='fact_outlier_metrics (credit_dm.fact_outlier_metrics)+ (credit_rating_dm)' name='federated.0qilped01smibi102kb790w4gcys' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0qilped01smibi102kb790w4gcys'>
+            <column-instance column='[rating_date]' derivation='Attribute' name='[attr:rating_date:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[score_diff]' derivation='Max' name='[max:score_diff:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[security_name]' derivation='None' name='[none:security_name:nk]' pivot='key' type='nominal' />
+            <column caption='Rating Date' datatype='date' name='[rating_date]' role='dimension' type='ordinal' />
+            <column caption='Score Diff' datatype='integer' name='[score_diff]' role='measure' type='quantitative' />
+            <column caption='Score Max' datatype='integer' name='[score_max]' role='measure' type='quantitative' />
+            <column caption='Score Min' datatype='integer' name='[score_min]' role='measure' type='quantitative' />
+            <column caption='Security Name' datatype='string' name='[security_name]' role='dimension' type='nominal' />
+            <column-instance column='[score_max]' derivation='Sum' name='[sum:score_max:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[score_min]' derivation='Sum' name='[sum:score_min:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[total_vendors]' derivation='Sum' name='[sum:total_vendors:qk]' pivot='key' type='quantitative' />
+            <column caption='Total Vendors' datatype='integer' name='[total_vendors]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='tick-color' scope='cols' value='#ffffff' />
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='border-width' scope='rows' value='0' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='border-width' data-class='total' value='0' />
+            <format attr='border-style' data-class='total' value='none' />
+            <format attr='border-width' scope='rows' value='0' />
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='border-width' data-class='total' value='0' />
+            <format attr='border-style' data-class='total' value='none' />
+            <format attr='border-width' scope='rows' value='0' />
+          </style-rule>
+          <style-rule element='dropline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+          <style-rule element='zeroline'>
+            <format attr='stroke-size' scope='cols' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <tooltip column='[federated.0qilped01smibi102kb790w4gcys].[attr:rating_date:ok]' />
+              <tooltip column='[federated.0qilped01smibi102kb790w4gcys].[sum:score_max:qk]' />
+              <tooltip column='[federated.0qilped01smibi102kb790w4gcys].[sum:score_min:qk]' />
+              <tooltip column='[federated.0qilped01smibi102kb790w4gcys].[sum:total_vendors:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+              <style-rule element='trendline'>
+                <format attr='stroke-size' value='0' />
+                <format attr='line-visibility' value='off' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0qilped01smibi102kb790w4gcys].[max:score_diff:qk]</rows>
+        <cols>[federated.0qilped01smibi102kb790w4gcys].[none:security_name:nk]</cols>
+      </table>
+      <simple-id uuid='{BBA5FE12-9CDA-4750-BB26-FF76125BFCE9}' />
+    </worksheet>
+    <worksheet name='Vendor Rating Changes'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true'>&lt;Sheet Name&gt;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='fact_outlier_metrics (credit_dm.fact_outlier_metrics)+ (credit_rating_dm)' name='federated.0qilped01smibi102kb790w4gcys' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0qilped01smibi102kb790w4gcys'>
+            <column-instance column='[vendor_name]' derivation='None' name='[none:vendor_name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[year]' derivation='None' name='[none:year:qk]' pivot='key' type='quantitative' />
+            <column caption='Rating Change Count' datatype='integer' name='[rating_change_count]' role='measure' type='quantitative' />
+            <column-instance column='[rating_change_count]' derivation='Sum' name='[sum:rating_change_count:qk]' pivot='key' type='quantitative' />
+            <column caption='Vendor Name' datatype='string' name='[vendor_name]' role='dimension' type='nominal' />
+            <column caption='Year' datatype='integer' name='[year]' role='dimension' type='quantitative' />
+          </datasource-dependencies>
+          <computed-sort column='[federated.0qilped01smibi102kb790w4gcys].[none:vendor_name:nk]' direction='DESC' using='[federated.0qilped01smibi102kb790w4gcys].[sum:rating_change_count:qk]' />
+          <filter class='quantitative' column='[federated.0qilped01smibi102kb790w4gcys].[none:year:qk]' included-values='in-range'>
+            <min>2021</min>
+            <max>2025</max>
+          </filter>
+          <slices>
+            <column>[federated.0qilped01smibi102kb790w4gcys].[none:year:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='tick-color' scope='cols' value='#ffffff' />
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='border-width' value='0' />
+            <format attr='border-style' value='none' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='band-color' scope='cols' value='#ffffff' />
+            <format attr='border-width' value='0' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' data-class='subtotal' value='0' />
+            <format attr='border-style' data-class='subtotal' value='none' />
+            <format attr='border-width' data-class='total' value='0' />
+            <format attr='border-style' data-class='total' value='none' />
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='band-color' scope='cols' value='#ffffff' />
+            <format attr='border-width' value='0' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' data-class='subtotal' value='0' />
+            <format attr='border-style' data-class='subtotal' value='none' />
+            <format attr='border-width' data-class='total' value='0' />
+            <format attr='border-style' data-class='total' value='none' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='band-size' scope='cols' value='1' />
+          </style-rule>
+          <style-rule element='dropline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+          <style-rule element='zeroline'>
+            <format attr='line-pattern-only' scope='cols' value='solid' />
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='line-pattern-only' scope='rows' value='solid' />
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+            <format attr='div-level' scope='rows' value='0' />
+            <format attr='line-pattern-only' scope='cols' value='solid' />
+            <format attr='stroke-size' scope='cols' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+          <style-rule element='header-div'>
+            <format attr='line-pattern-only' scope='rows' value='solid' />
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+            <format attr='line-pattern-only' scope='cols' value='solid' />
+            <format attr='stroke-size' scope='cols' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0qilped01smibi102kb790w4gcys].[none:vendor_name:nk]' />
+              <lod column='[federated.0qilped01smibi102kb790w4gcys].[none:year:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+              <style-rule element='trendline'>
+                <format attr='stroke-size' value='0' />
+                <format attr='line-visibility' value='off' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0qilped01smibi102kb790w4gcys].[sum:rating_change_count:qk]</rows>
+        <cols>[federated.0qilped01smibi102kb790w4gcys].[none:vendor_name:nk]</cols>
+      </table>
+      <simple-id uuid='{31435137-6784-47B5-86C3-9AA9A3AE674A}' />
+    </worksheet>
+    <worksheet name='Vendor Rating Distribution'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1'>&lt;Sheet Name&gt;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='fact_outlier_metrics (credit_dm.fact_outlier_metrics)+ (credit_rating_dm)' name='federated.0qilped01smibi102kb790w4gcys' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0qilped01smibi102kb790w4gcys'>
+            <column-instance column='[standard_rating]' derivation='Count' name='[cnt:standard_rating:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[standard_rating]' derivation='None' name='[none:standard_rating:nk]' pivot='key' type='nominal' />
+            <column-instance column='[vendor_name]' derivation='None' name='[none:vendor_name:nk]' pivot='key' type='nominal' />
+            <column caption='Standard Rating' datatype='string' name='[standard_rating]' role='dimension' type='nominal' />
+            <column caption='Vendor Name' datatype='string' name='[vendor_name]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <computed-sort column='[federated.0qilped01smibi102kb790w4gcys].[none:vendor_name:nk]' direction='DESC' using='[federated.0qilped01smibi102kb790w4gcys].[cnt:standard_rating:qk]' />
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0qilped01smibi102kb790w4gcys].[none:standard_rating:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0qilped01smibi102kb790w4gcys].[cnt:standard_rating:qk]</rows>
+        <cols>[federated.0qilped01smibi102kb790w4gcys].[none:vendor_name:nk]</cols>
+      </table>
+      <simple-id uuid='{875A4509-F841-47D5-B304-E13EB011C45E}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard enable-sort-zone-taborder='true' name='Dashboard 1'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontcolor='#d37295' fontname='Benton Sans Book'>                                                                     Credit Rating KPI Dashboard (2021–2025)</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <style>
+        <style-rule element='table'>
+          <format attr='background-color' value='#f5f5f5' />
+        </style-rule>
+      </style>
+      <size sizing-mode='automatic' />
+      <zones>
+        <zone h='100000' id='8' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98244' id='17' param='vert' type-v2='layout-flow' w='99034' x='483' y='878'>
+            <zone h='4830' id='18' type-v2='title' w='99034' x='483' y='878'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone h='93414' id='11' param='horz' type-v2='layout-flow' w='99034' x='483' y='5708'>
+              <zone h='93414' id='9' type-v2='layout-basic' w='99034' x='483' y='5708' />
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+        <zone h='9111' id='1' param='horz' type-v2='layout-flow' w='78897' x='5513' y='16685'>
+          <zone h='9111' id='2' name='KPI – Total Upgrade' w='19724' x='5513' y='16685'>
+            <layout-cache cell-count-w='1' fixed-size-h='68' type-h='fixed' type-w='cell' />
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='0' />
+              <format attr='padding' value='0' />
+              <format attr='background-color' value='#ffffff' />
+            </zone-style>
+          </zone>
+          <zone h='9111' id='3' name='KPI – Total Downgrades' w='19724' x='25237' y='16685'>
+            <layout-cache cell-count-w='1' type-h='fixed' type-w='cell' />
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='0' />
+              <format attr='padding' value='0' />
+              <format attr='background-color' value='#ffffff' />
+            </zone-style>
+          </zone>
+          <zone h='9111' id='4' name='KPI – Net Change' w='19724' x='44961' y='16685'>
+            <layout-cache cell-count-w='1' type-h='fixed' type-w='cell' />
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='0' />
+              <format attr='padding' value='0' />
+              <format attr='background-color' value='#ffffff' />
+            </zone-style>
+          </zone>
+          <zone h='9111' id='5' name='KPI – Avg Precision Score' w='19724' x='64685' y='16685'>
+            <layout-cache cell-count-w='1' type-h='fixed' type-w='cell' />
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='0' />
+              <format attr='padding' value='0' />
+              <format attr='background-color' value='#ffffff' />
+            </zone-style>
+          </zone>
+        </zone>
+        <zone h='33260' id='6' param='horz' type-v2='layout-flow' w='79194' x='5394' y='28650'>
+          <zone h='33260' id='7' name='Rating Trend by Vendor' w='30913' x='5394' y='28650'>
+            <layout-cache cell-count-w='5' minheight='195' non-cell-size-w='50' type-h='scalable' type-w='cell' />
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone fixed-size='118' h='33260' id='12' is-fixed='true' name='Rating Trend by Vendor' pane-specification-id='0' param='[federated.0qilped01smibi102kb790w4gcys].[none:vendor_name:nk]' type-v2='color' w='7604' x='36307' y='28650'>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone fixed-size='666' h='33260' id='13' is-fixed='true' name='Outlier % Trend' w='40676' x='43911' y='28650'>
+            <layout-cache type-h='fixed' type-w='cell' />
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+        </zone>
+        <zone h='33260' id='14' param='horz' type-v2='layout-flow' w='79135' x='5453' y='63666'>
+          <zone h='33260' id='15' name='Vendor Rating Changes' w='79135' x='5453' y='63666'>
+            <layout-cache cell-count-w='8' minheight='195' non-cell-size-w='68' type-h='scalable' type-w='cell' />
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+        </zone>
+        <zone forceUpdate='true' h='6147' id='19' type-v2='text' w='67576' x='11085' y='8452'>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontcolor='#000000' fontname='Benton Sans Book' fontsize='16'>Consolidated summary of credit rating movements across vendors and rating types.</run>
+          </formatted-text>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='10' />
+            <format attr='padding' value='10' />
+            <format attr='background-color' value='#ffffff' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <layout-options>
+            <title>
+              <formatted-text>
+                <run bold='true' fontcolor='#d37295' fontname='Benton Sans Book'>                                                     Credit Rating KPI Dashboard (2021–2025)</run>
+              </formatted-text>
+            </title>
+          </layout-options>
+          <size maxheight='1350' minheight='1350' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='29' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98244' id='28' param='vert' type-v2='layout-flow' w='99034' x='483' y='878'>
+                <zone h='4830' id='18' type-v2='title' w='99034' x='483' y='878'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='6147' id='19' type-v2='text' w='67576' x='11085' y='8452'>
+                  <formatted-text>
+                    <run bold='true' fontalignment='1' fontcolor='#000000' fontname='Benton Sans Book' fontsize='16'>Consolidated summary of credit rating movements across vendors and rating types.</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                    <format attr='background-color' value='#ffffff' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='73' h='9111' id='2' is-fixed='true' name='KPI – Total Upgrade' w='19724' x='5513' y='16685'>
+                  <layout-cache cell-count-w='1' fixed-size-h='68' type-h='fixed' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                    <format attr='background-color' value='#ffffff' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='73' h='9111' id='3' is-fixed='true' name='KPI – Total Downgrades' w='19724' x='25237' y='16685'>
+                  <layout-cache cell-count-w='1' type-h='fixed' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                    <format attr='background-color' value='#ffffff' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='73' h='9111' id='4' is-fixed='true' name='KPI – Net Change' w='19724' x='44961' y='16685'>
+                  <layout-cache cell-count-w='1' type-h='fixed' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                    <format attr='background-color' value='#ffffff' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='73' h='9111' id='5' is-fixed='true' name='KPI – Avg Precision Score' w='19724' x='64685' y='16685'>
+                  <layout-cache cell-count-w='1' type-h='fixed' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                    <format attr='background-color' value='#ffffff' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='258' h='33260' id='7' is-fixed='true' name='Rating Trend by Vendor' w='30913' x='5394' y='28650'>
+                  <layout-cache cell-count-w='5' minheight='195' non-cell-size-w='50' type-h='scalable' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='118' h='33260' id='12' name='Rating Trend by Vendor' pane-specification-id='0' param='[federated.0qilped01smibi102kb790w4gcys].[none:vendor_name:nk]' type-v2='color' w='7604' x='36307' y='28650'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='258' h='33260' id='13' is-fixed='true' name='Outlier % Trend' w='40676' x='43911' y='28650'>
+                  <layout-cache type-h='fixed' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='258' h='33260' id='15' is-fixed='true' name='Vendor Rating Changes' w='79135' x='5453' y='63666'>
+                  <layout-cache cell-count-w='8' minheight='195' non-cell-size-w='68' type-h='scalable' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{C3FC149A-043E-4F15-8E9D-A412E9AA5B1C}' />
+    </dashboard>
+    <dashboard enable-sort-zone-taborder='true' name='Dashboard 2'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontcolor='#000000' fontname='Benton Sans Book'>Vendor &amp; Country Performance Insights</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <style>
+        <style-rule element='table'>
+          <format attr='background-color' value='#f5f5f5' />
+        </style-rule>
+      </style>
+      <size sizing-mode='automatic' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98244' id='13' param='horz' type-v2='layout-flow' w='99034' x='483' y='878'>
+            <zone h='98244' id='5' param='vert' type-v2='layout-flow' w='99034' x='483' y='878'>
+              <zone h='4830' id='7' type-v2='title' w='99034' x='483' y='878'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='93414' id='6' type-v2='layout-basic' w='99034' x='483' y='5708' />
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+        <zone h='42481' id='8' param='horz' type-v2='layout-flow' w='89740' x='2112' y='16356'>
+          <zone fixed-size='645' h='42481' id='9' is-fixed='true' name='Country Comparison' w='39409' x='2112' y='16356'>
+            <layout-cache minwidth='202' type-h='fixed' type-w='scalable' />
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone fixed-size='709' h='42481' id='11' is-fixed='true' name='Vendor Rating Distribution' w='43271' x='41521' y='16356'>
+            <layout-cache type-h='fixed' type-w='cell' />
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone h='42481' id='14' name='Vendor Rating Distribution' pane-specification-id='0' param='[federated.0qilped01smibi102kb790w4gcys].[none:standard_rating:nk]' type-v2='color' w='7060' x='84792' y='16356'>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+        </zone>
+        <zone h='8342' id='10' name='Country Comparison' pane-specification-id='0' param='[federated.0qilped01smibi102kb790w4gcys].[avg:rating_score:qk]' type-v2='color' w='8268' x='26916' y='25247' />
+        <zone forceUpdate='true' h='7245' id='22' type-v2='text' w='65480' x='14725' y='6586'>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontcolor='#e15759' fontname='Benton Sans Book' fontsize='16'>Comparative analysis of vendor behavior, rating distribution, and regional trends.</run>
+          </formatted-text>
+        </zone>
+        <zone h='40615' id='31' param='horz' type-v2='layout-flow' w='89439' x='1931' y='58727'>
+          <zone fixed-size='589' h='40615' id='32' is-fixed='true' name=' Outlier Severity' w='36029' x='1931' y='58727'>
+            <layout-cache minheight='210' type-h='scalable' type-w='cell' />
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone fixed-size='72' h='40615' id='33' is-fixed='true' name=' Outlier Severity' pane-specification-id='0' param='[federated.0qilped01smibi102kb790w4gcys].[sum:outlier_pct:qk]' type-v2='color' w='4828' x='37960' y='58727'>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone h='40615' id='34' name='Top Outliers' w='48578' x='42788' y='58727'>
+            <layout-cache cell-count-w='61' non-cell-size-w='60' type-h='fixed' type-w='cell' />
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <layout-options>
+            <title>
+              <formatted-text>
+                <run bold='true' fontalignment='1' fontcolor='#000000' fontname='Benton Sans Book'>Vendor &amp; Country Performance Insights</run>
+              </formatted-text>
+            </title>
+          </layout-options>
+          <size maxheight='1500' minheight='1500' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='36' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98244' id='35' param='vert' type-v2='layout-flow' w='99034' x='483' y='878'>
+                <zone h='4830' id='7' type-v2='title' w='99034' x='483' y='878'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='7245' id='22' type-v2='text' w='65480' x='14725' y='6586'>
+                  <formatted-text>
+                    <run bold='true' fontalignment='1' fontcolor='#e15759' fontname='Benton Sans Book' fontsize='16'>Comparative analysis of vendor behavior, rating distribution, and regional trends.</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='42481' id='9' is-fixed='true' name='Country Comparison' w='39409' x='2112' y='16356'>
+                  <layout-cache minwidth='202' type-h='fixed' type-w='scalable' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='8342' id='10' name='Country Comparison' pane-specification-id='0' param='[federated.0qilped01smibi102kb790w4gcys].[avg:rating_score:qk]' type-v2='color' w='8268' x='31382' y='21295'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='42481' id='11' is-fixed='true' name='Vendor Rating Distribution' w='43271' x='41521' y='16356'>
+                  <layout-cache type-h='fixed' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='42481' id='14' name='Vendor Rating Distribution' pane-specification-id='0' param='[federated.0qilped01smibi102kb790w4gcys].[none:standard_rating:nk]' type-v2='color' w='7060' x='84792' y='16356'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='40615' id='32' is-fixed='true' name=' Outlier Severity' w='36029' x='1931' y='58727'>
+                  <layout-cache minheight='210' type-h='scalable' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='72' h='40615' id='33' name=' Outlier Severity' pane-specification-id='0' param='[federated.0qilped01smibi102kb790w4gcys].[sum:outlier_pct:qk]' type-v2='color' w='4828' x='37960' y='58727'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='40615' id='34' is-fixed='true' name='Top Outliers' w='48578' x='42788' y='58727'>
+                  <layout-cache cell-count-w='61' non-cell-size-w='60' type-h='fixed' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{8DF561D7-58FF-4DB4-8FCB-99E8269685A4}' />
+    </dashboard>
+  </dashboards>
+  <windows pres-mode='true' source-height='63'>
+    <window class='worksheet' name='KPI – Total Upgrade'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{CBB6A595-ECB1-4DC5-81AB-6C64D8614AB5}' />
+    </window>
+    <window class='worksheet' name='KPI – Total Downgrades'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{055305BA-DC9D-4782-918E-727E73C757F0}' />
+    </window>
+    <window class='worksheet' name='KPI – Net Change'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{E2A2C8AC-613B-4A40-95BC-7F8F612A5B6B}' />
+    </window>
+    <window class='worksheet' name='KPI – Avg Precision Score'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{B9279C51-024B-4E47-8E92-3A5E8FE5156A}' />
+    </window>
+    <window class='worksheet' name='Vendor Rating Changes'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='1' param='[federated.0qilped01smibi102kb790w4gcys].[none:vendor_name:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{5A2F123F-EE9E-497D-9C7B-A7342A0374E1}' />
+    </window>
+    <window class='worksheet' name='Outlier % Trend'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{418F25B9-C13D-4FFF-AC79-20B371B9B9D4}' />
+    </window>
+    <window class='worksheet' name='Rating Trend by Vendor'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0qilped01smibi102kb790w4gcys].[none:vendor_name:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{2775C482-6807-4793-A525-7DB94776A52E}' />
+    </window>
+    <window class='worksheet' name='Vendor Rating Distribution'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0qilped01smibi102kb790w4gcys].[none:standard_rating:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{8B25F7EF-BB76-436E-8573-5103F4861E0D}' />
+    </window>
+    <window class='worksheet' name=' Outlier Severity'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0qilped01smibi102kb790w4gcys].[sum:outlier_pct:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{AF7371A8-DB03-436D-830F-47DF774FBB72}' />
+    </window>
+    <window class='worksheet' name='Top Outliers'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{6EC8BE1E-9948-4266-BA86-7522911A0379}' />
+    </window>
+    <window class='worksheet' name='Country Comparison'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0qilped01smibi102kb790w4gcys].[avg:rating_score:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{34056087-5DD8-4C3C-993F-086A16B21AAF}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Dashboard 1'>
+      <viewpoints>
+        <viewpoint name='KPI – Avg Precision Score'>
+          <zoom type='fit-width' />
+        </viewpoint>
+        <viewpoint name='KPI – Net Change'>
+          <zoom type='fit-width' />
+        </viewpoint>
+        <viewpoint name='KPI – Total Downgrades'>
+          <zoom type='fit-width' />
+        </viewpoint>
+        <viewpoint name='KPI – Total Upgrade'>
+          <zoom type='fit-width' />
+        </viewpoint>
+        <viewpoint name='Outlier % Trend'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Rating Trend by Vendor'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Vendor Rating Changes'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='18' />
+      <simple-id uuid='{F65A0A49-8890-427E-B1C4-A794E73F56B2}' />
+    </window>
+    <window class='dashboard' name='Dashboard 2'>
+      <viewpoints>
+        <viewpoint name=' Outlier Severity'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Country Comparison'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Top Outliers'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Vendor Rating Distribution'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='10' />
+      <simple-id uuid='{8CAF2E81-4021-48E7-B110-A027AC4CCD55}' />
+    </window>
+  </windows>
+</workbook>

@@ -371,7 +371,7 @@ def main():
             tx['standard_rating'] = 'UNRATED'
     tx['standard_rating'] = tx['standard_rating'].fillna('UNRATED').astype(str).str.upper()
 
-    # original rating
+    # original rating 
     if 'rating_code' in tx.columns:
         tx['original_rating'] = tx['rating_code']
     elif 'rating_raw' in tx.columns:
